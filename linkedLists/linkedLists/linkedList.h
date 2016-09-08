@@ -11,36 +11,48 @@ class linkedList{
 
 public:
 	linkedList();
-	//~linkedList();
+	linkedList(int newData);
 	void addNode(int newData);//add node to end of list
-	void updateNode(int newData);//update specific node
-	void removeNode();
+	//void updateNode(int newData);//update specific node
+	//void removeNode();
 	void traverse();
 	void printNode();
-	void printList();
-	void searchList(int searchData);
+	//void printList();
+	//void searchList(int searchData);
 
 private:
 	node *head;
 	node *current;
 	node *newNode;
-
-	const int HEAD = NULL;
+	bool isStart = true;
 };
 
 linkedList::linkedList() {
 	newNode = new node;
 	head = newNode;
 	current = newNode;
-	head->setNode(HEAD, nullptr);
+}
+
+linkedList::linkedList(int newData) {
+	newNode = new node;
+	newNode->setNode(newData);
+	head = newNode;
+	current = newNode;
 }
 
 void linkedList::addNode(int newData){
-
-	newNode = new node;
-	newNode->setNode(newData, nullptr);
-	current->setNext(newNode);
-	current = newNode;
+	//this leaves the head of the list blank...need to figure out how to use
+	//the head and advance the list.
+	if (isStart) { //maybe not best but functioning
+		head->setNode(newData);
+		isStart = false;
+	}
+	else {
+		newNode = new node;
+		newNode->setNode(newData);
+		current->setNext(newNode);
+		current = newNode;
+	}
 }
 
 void linkedList::traverse() {
@@ -53,32 +65,32 @@ void linkedList::traverse() {
 }
 
 void linkedList::printNode() {
-	cout << current->getNode();
+	cout << current->getNode() << " ";
 }
 
-void linkedList::printList() {
-	current = head;
+//void linkedList::printList() {
+//	current = head;
+//
+//	while (current != nullptr) {
+//		cout << current->getNode();
+//		current = current->getNext();
+//	}
+//}
 
-	while (current != nullptr) {
-		cout << current->getNode();
-		current = current->getNext();
-	}
-}
-
-void linkedList::searchList(int searchData) {
-	current = head;
-
-	while (current != nullptr) {
-		if (current->getNode() == searchData) {
-			cout << searchData << " is found!" << endl;
-			break;
-		}
-		else {
-			current = current->getNext();
-			if (current == nullptr) {
-				cout << searchData << " is not found!" << endl;
-			}
-		}
-	}
-}
+//void linkedList::searchList(int searchData) {
+//	current = head;
+//
+//	while (current != nullptr) {
+//		if (current->getNode() == searchData) {
+//			cout << searchData << " is found!" << endl;
+//			break;
+//		}
+//		else {
+//			current = current->getNext();
+//			if (current == nullptr) {
+//				cout << searchData << " is not found!" << endl;
+//			}
+//		}
+//	}
+//}
 #endif

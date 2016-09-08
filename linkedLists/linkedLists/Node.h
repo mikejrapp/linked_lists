@@ -11,7 +11,7 @@ private:
 
 public:
 	node();
-	void setNode(int newData, node *nextNode);
+	void setNode(int newData);
 	void setNext(node *nextNode);
 	int getNode();
 	node *getNext();
@@ -22,9 +22,8 @@ node::node() {
 	next = nullptr;
 }
 
-void node::setNode(int newData, node *nextNode) {
+void node::setNode(int newData) {
 	data = newData;
-	next = nextNode;
 }
 
 void node::setNext(node *nextNode){
