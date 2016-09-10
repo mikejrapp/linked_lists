@@ -17,8 +17,9 @@ public:
 	//void removeNode();
 	void traverse();
 	void printNode();
-	//void printList();
-	//void searchList(int searchData);
+	bool searchList(int searchData);
+	int findPosition(int searchData);
+	void deleteList();
 
 private:
 	node *head;
@@ -68,29 +69,47 @@ void linkedList::printNode() {
 	cout << current->getNode() << " ";
 }
 
-//void linkedList::printList() {
-//	current = head;
-//
-//	while (current != nullptr) {
-//		cout << current->getNode();
-//		current = current->getNext();
-//	}
-//}
+bool linkedList::searchList(int searchData) {//set to return a bool value to make this more generic...it works for now to test
+	bool isFound = false;
+	current = head;
 
-//void linkedList::searchList(int searchData) {
-//	current = head;
-//
-//	while (current != nullptr) {
-//		if (current->getNode() == searchData) {
-//			cout << searchData << " is found!" << endl;
-//			break;
-//		}
-//		else {
-//			current = current->getNext();
-//			if (current == nullptr) {
-//				cout << searchData << " is not found!" << endl;
-//			}
-//		}
-//	}
-//}
+	while (current != nullptr) {
+		if (current->getNode() == searchData) {
+			return true;
+		}
+		else {
+			current = current->getNext();
+			if (current == nullptr && !isFound) {
+				return false;
+			}//end if
+		}//end else
+	}//end while
+}
+
+void linkedList::deleteList() {
+	current = head;
+	head = head->getNext();
+	delete current;
+}
+
+int linkedList::findPosition(int searchData) {
+	//possibly get rid of this. Kind of not needed.
+
+	int position = -1;//if searchData return -1
+
+	current = head;
+
+	while (current != nullptr) {
+		if (current->getNode() == searchData) {
+			position++;
+			return position;
+		}
+		else {
+			current = current->getNext();
+		}
+		position++;
+	}
+
+	return position;
+}
 #endif

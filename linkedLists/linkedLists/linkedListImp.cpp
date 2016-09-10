@@ -13,9 +13,22 @@ void printList(linkedList list1);
 int main() {
 	linkedList list1;
 	ifstream inFile;
+	int testNum;
 
 	loadList(inFile, list1);
 	printList(list1);
+
+	cout << "\nplease enter a number to search for: ";
+	cin >> testNum;
+
+	if (list1.searchList(testNum)) {
+		cout << "\n" << testNum << " is found!" << endl;
+		cout << testNum << "'s first position is " << list1.findPosition(testNum);
+	}
+	else {
+		cout << "\n" << testNum << " is not found!" << endl;
+	}
+
 
 	cin.ignore();
 	cin.get();
@@ -23,10 +36,10 @@ int main() {
 }
 
 bool openFile(ifstream &inFile) {
-	string filepath;
+	string filepath = "p2datafile.txt"; //Entered now to speed up testing. Add option for user to enter.
 
-	cout << "Please enter the filepath for the input file: ";
-	cin >> filepath;
+	/*cout << "Please enter the filepath for the input file: ";
+	cin >> filepath;*/
 
 	inFile.open(filepath);
 
