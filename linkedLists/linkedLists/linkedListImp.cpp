@@ -18,18 +18,6 @@ int main() {
 	loadList(inFile, list1);
 	printList(list1);
 
-	cout << "\nplease enter a number to search for: ";
-	cin >> testNum;
-
-	if (list1.searchList(testNum)) {
-		cout << "\n" << testNum << " is found!" << endl;
-		cout << testNum << "'s first position is " << list1.findPosition(testNum);
-	}
-	else {
-		cout << "\n" << testNum << " is not found!" << endl;
-	}
-
-
 	cin.ignore();
 	cin.get();
 	return 0;

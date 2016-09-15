@@ -13,13 +13,10 @@ public:
 	linkedList();
 	linkedList(int newData);
 	void addNode(int newData);//add node to end of list
-	//void updateNode(int newData);//update specific node
-	//void removeNode();
 	void traverse();
 	void printNode();
 	bool searchList(int searchData);
-	int findPosition(int searchData);
-	void deleteList();
+
 
 private:
 	node *head;
@@ -86,30 +83,5 @@ bool linkedList::searchList(int searchData) {//set to return a bool value to mak
 	}//end while
 }
 
-void linkedList::deleteList() {
-	current = head;
-	head = head->getNext();
-	delete current;
-}
 
-int linkedList::findPosition(int searchData) {
-	//possibly get rid of this. Kind of not needed.
-
-	int position = -1;//if searchData return -1
-
-	current = head;
-
-	while (current != nullptr) {
-		if (current->getNode() == searchData) {
-			position++;
-			return position;
-		}
-		else {
-			current = current->getNext();
-		}
-		position++;
-	}
-
-	return position;
-}
 #endif
