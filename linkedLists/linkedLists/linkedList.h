@@ -15,8 +15,7 @@ public:
 	void addNode(int newData);//add node to end of list
 	void traverse();
 	void printNode();
-	bool searchList(int searchData);
-
+	void passOrderedList();
 protected:
 	node *head;
 	node *current;
@@ -40,9 +39,7 @@ linkedList::linkedList(int newData) {
 }
 
 void linkedList::addNode(int newData){
-	//this leaves the head of the list blank...need to figure out how to use
-	//the head and advance the list.
-	if (isStart) { //maybe not best but functioning
+	if (isStart) { 
 		head->setNode(newData);
 		isStart = false;
 	}
@@ -67,22 +64,7 @@ void linkedList::printNode() {
 	cout << current->getNode() << " ";
 }
 
-bool linkedList::searchList(int searchData) {//set to return a bool value to make this more generic...it works for now to test
-	bool isFound = false;
-	current = head;
+void linkedList::passOrderedList() {
 
-	while (current != nullptr) {
-		if (current->getNode() == searchData) {
-			return true;
-		}
-		else {
-			current = current->getNext();
-			if (current == nullptr && !isFound) {
-				return false;
-			}//end if
-		}//end else
-	}//end while
 }
-
-
 #endif

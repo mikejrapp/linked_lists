@@ -1,9 +1,9 @@
 ﻿  linkedListImp.cpp
-c:\users\michael\documents\school\data structures\linked_lists\linkedlists\linkedlists\linkedlistimp.cpp(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\michael\documents\school\data structures\linked_lists\linkedlists\linkedlists\doublylinkedlist.h(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\michael\documents\school\data structures\linked_lists\linkedlists\linkedlists\doublylinkedlist.h(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\michael\documents\school\data structures\linked_lists\linkedlists\linkedlists\doublenode.h(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\michael\documents\school\data structures\linked_lists\linkedlists\linkedlists\doublenode.h(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\michael\documents\school\data structures\linked_lists\linkedlists\linkedlists\linkedlist.h(85): warning C4715: 'linkedList::searchList': not all control paths return a value
-  linkedLists.vcxproj -> C:\Users\Michael\Documents\School\Data Structures\Linked_Lists\linkedLists\Debug\linkedLists.exe
-  linkedLists.vcxproj -> C:\Users\Michael\Documents\School\Data Structures\Linked_Lists\linkedLists\Debug\linkedLists.pdb (Partial PDB)
+f:\users\mike\documents\code\school\data_structures\linked_lists\linkedlists\linkedlists\linkedlistimp.cpp(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+f:\users\mike\documents\code\school\data_structures\linked_lists\linkedlists\linkedlists\doublylinkedlist.h(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+f:\users\mike\documents\code\school\data_structures\linked_lists\linkedlists\linkedlists\doublylinkedlist.h(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+f:\users\mike\documents\code\school\data_structures\linked_lists\linkedlists\linkedlists\doublenode.h(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+f:\users\mike\documents\code\school\data_structures\linked_lists\linkedlists\linkedlists\doublenode.h(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+f:\users\mike\documents\code\school\data_structures\linked_lists\linkedlists\linkedlists\linkedlist.h(83): warning C4715: 'linkedList::searchList': not all control paths return a value
+  linkedLists.vcxproj -> F:\Users\Mike\Documents\Code\School\Data_Structures\Linked_Lists\linkedLists\Debug\linkedLists.exe
+  linkedLists.vcxproj -> F:\Users\Mike\Documents\Code\School\Data_Structures\Linked_Lists\linkedLists\Debug\linkedLists.pdb (Partial PDB)

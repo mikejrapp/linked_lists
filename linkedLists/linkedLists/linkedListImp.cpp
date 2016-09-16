@@ -65,8 +65,14 @@ void printList(linkedList list1) {
 }
 
 void testPrint(doublyLinkedList &list2) {
-	cout << "\nprinting from head " << endl;
-	list2.printFromHead();
-	cout << "\nPrinting from tail " << endl;
-	list2.printFromTail();
+	cout << "checking if list is empty" << endl;
+	if (list2.isEmpty()) {
+		cout << "the list is empty. Cannot print." << endl;
+	}
+	else {
+		cout << "\nprinting from head " << endl;
+		list2.traverseFromHead();
+		cout << "\nPrinting from tail " << endl;
+		list2.traverseFromTail();
+	}
 }

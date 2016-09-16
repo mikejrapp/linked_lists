@@ -12,6 +12,12 @@ public:
 	void addNode(int newData);
 	void printFromHead();
 	void printFromTail();
+	void traverseFromHead();
+	void traverseFromTail();
+	void printDoubleNode();
+	void copyList(linkedList list);
+	void deleteList();
+	bool isEmpty();
 private:
 	doubleNode *head;
 	doubleNode *tail;
@@ -57,6 +63,49 @@ void doublyLinkedList::printFromTail() {
 	while(current != nullptr){
 		cout << current->getNode() << " ";
 		current = current->getPrevious();
+	}
+}
+
+void doublyLinkedList::traverseFromHead() {
+	current = head;
+	while (current != nullptr) {
+		printDoubleNode();
+		current = current->getNextDouble();
+	}
+}
+
+void doublyLinkedList::traverseFromTail() {
+	current = tail;
+	while (current != nullptr) {
+		printDoubleNode();
+		current = current->getPrevious();
+	}
+}
+
+void doublyLinkedList::printDoubleNode() {
+	cout << current->getNode() << " ";
+}
+
+void doublyLinkedList::copyList(linkedList list) {
+	if (head->getNextDouble() == nullptr) {
+		list.traverse();
+	}
+}
+
+void doublyLinkedList::deleteList() {
+	while (head != nullptr) {
+		current = head;
+		head = head->getNextDouble();
+		delete current;
+	}
+}
+
+bool doublyLinkedList::isEmpty() {
+	if (head->getNextDouble() == nullptr) {
+		return true;
+	}
+	else {
+		return false;
 	}
 }
 #endif
