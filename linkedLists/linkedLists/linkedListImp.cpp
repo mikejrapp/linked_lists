@@ -1,22 +1,25 @@
 #include<iostream>
 #include<fstream>
 #include<string>
-//#include"Node.h"
-#include"linkedList.h"
+
+#include "doublyLinkedList.h";
 
 using namespace std;
 
 bool openFile(ifstream &inFile);
-void loadList(ifstream &inFile, linkedList &list1);
+void loadList(ifstream &inFile, linkedList &list1,doublyLinkedList &list2);
 void printList(linkedList list1);
+void testPrint(doublyLinkedList &list2);
 
 int main() {
 	linkedList list1;
+	doublyLinkedList list2;
 	ifstream inFile;
-	int testNum;
+	//int testNum;
 
-	loadList(inFile, list1);
+	loadList(inFile, list1, list2);
 	printList(list1);
+	testPrint(list2);
 
 	cin.ignore();
 	cin.get();
@@ -39,7 +42,7 @@ bool openFile(ifstream &inFile) {
 	}
 }
 
-void loadList(ifstream &inFile, linkedList &list1) {
+void loadList(ifstream &inFile, linkedList &list1, doublyLinkedList &list2) {
 	int data;
 
 	if (openFile(inFile)) {
@@ -47,6 +50,7 @@ void loadList(ifstream &inFile, linkedList &list1) {
 		while (!inFile.eof()) {
 			inFile >> data;
 			list1.addNode(data);
+			list2.addNode(data);
 		}
 	}
 	else {
@@ -58,4 +62,11 @@ void loadList(ifstream &inFile, linkedList &list1) {
 
 void printList(linkedList list1) {
 	list1.traverse();
+}
+
+void testPrint(doublyLinkedList &list2) {
+	cout << "\nprinting from head " << endl;
+	list2.printFromHead();
+	cout << "\nPrinting from tail " << endl;
+	list2.printFromTail();
 }

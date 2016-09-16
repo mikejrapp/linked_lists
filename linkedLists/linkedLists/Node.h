@@ -5,10 +5,10 @@ using namespace std;
 
 class node{
 
-private:
+protected:
 	int data;
+private:
 	node *next;
-
 public:
 	node();
 	void setNode(int newData);

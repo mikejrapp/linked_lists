@@ -17,11 +17,12 @@ public:
 	void printNode();
 	bool searchList(int searchData);
 
-
-private:
+protected:
 	node *head;
 	node *current;
 	node *newNode;
+
+private:
 	bool isStart = true;
 };
 

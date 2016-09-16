@@ -1,24 +1,43 @@
 #pragma once
-#ifndef H_DOUBLENODE;
-#define H_DOUBLENODE;
+#ifndef H_DOUBLENODE
+#define H_DOUBLENODE
 
-#include<iostream>;
-#include"Node.h";
+#include <iostream>;
+#include "Node.h";
 
-class DoubleNode : public node {
+class doubleNode : public node {
 public:
-	void setPrevious(DoubleNode *previousNode);
-	DoubleNode *getPrevious();
+	doubleNode();
+	void setPrevious(doubleNode *previousNode);
+	doubleNode *getPrevious();
+	doubleNode *getNextDouble();
+	void setNextDouble(doubleNode *nextNode);
 private:
-	DoubleNode *previous;
+	doubleNode *previous;
+	doubleNode *next;
 };
 
-void DoubleNode::setPrevious(DoubleNode *previousNode) {
+doubleNode::doubleNode() {
+	//protected members of node
+	data = 0;
+	next = nullptr;
+	//
+	previous = nullptr;
+}
+
+void doubleNode::setPrevious(doubleNode *previousNode) {
 	previous = previousNode;
 }
 
-DoubleNode* DoubleNode::getPrevious() {
+void doubleNode::setNextDouble(doubleNode *nextDouble) {
+	next = nextDouble;
+}
+
+doubleNode* doubleNode::getPrevious() {
 	return previous;
 }
 
+doubleNode* doubleNode::getNextDouble() {
+	return next;
+}
 #endif
